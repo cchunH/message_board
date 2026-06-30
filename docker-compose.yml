@@ -1,0 +1,16 @@
+# Docker Compose 一键启动留言板
+# 运行：docker-compose up --build
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=file:/app/data/dev.db
+      - JWT_SECRET=message-board-docker-secret
+    volumes:
+      - sqlite_data:/app/data
+
+volumes:
+  sqlite_data:
