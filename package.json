@@ -2,9 +2,7 @@
   "name": "message_board",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev --webpack",
-    "build": "next build --webpack",
+  "scripts": {\n    "postinstall": "prisma generate",\n    "dev": "next dev --webpack",\n    "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
     "db:setup": "prisma migrate dev && prisma db seed",
